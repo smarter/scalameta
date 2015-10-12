@@ -35,7 +35,8 @@ object build extends Build {
     tokens,
     tql,
     trees,
-    scalahost
+    scalahost,
+    dottyhost
   )
 
   lazy val foundation = Project(
@@ -196,6 +197,21 @@ object build extends Build {
     libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-compiler" % _)
   ) settings (
     exposeClasspaths("scalahost"): _*
+  ) dependsOn (scalameta)
+
+  lazy val dottyhost = Project(
+    id   = "dottyhost",
+    base = file("dottyhost")
+  ) settings (
+    publishableSettings: _*
+  ) settings (
+    mergeSettings: _*
+  ) settings (
+    crossVersion := CrossVersion.full,
+    description := "Dotty-based host that implements scala.meta's hosting APIs",
+    libraryDependencies += "org.scala-lang" %% "dotty" % "0.1-SNAPSHOT"
+  ) settings (
+    exposeClasspaths("dottyhost"): _*
   ) dependsOn (scalameta)
 
   lazy val sharedSettings = Defaults.defaultSettings ++ Seq(

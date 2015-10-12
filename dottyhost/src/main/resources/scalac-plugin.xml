@@ -1,0 +1,4 @@
+<plugin>
+  <name>dottyhost</name>
+  <classname>scala.meta.internal.hosts.dotty.Plugin</classname>
+</plugin>
