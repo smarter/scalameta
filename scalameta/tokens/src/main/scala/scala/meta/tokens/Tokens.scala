@@ -84,14 +84,14 @@ object Tokens {
 
   private[meta] case class Adhoc(underlying: Token*) extends Tokens(underlying: _*) {
     override def input = this
-    override def dialect = scala.meta.dialects.Scala211
+    override def dialect = scala.meta.dialects.Dotty
     override def isAuthentic = true
     override def toString = s"Adhoc($underlying)"
   }
 
   private[meta] case class Synthetic(underlying: Token*) extends Tokens(underlying: _*) {
     override def input = this
-    override def dialect = scala.meta.dialects.Scala211
+    override def dialect = scala.meta.dialects.Dotty
     override def isAuthentic = false
     override def toString = s"Synthetic($underlying)"
   }

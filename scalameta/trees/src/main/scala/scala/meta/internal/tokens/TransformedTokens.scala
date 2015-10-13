@@ -10,7 +10,7 @@ import scala.meta.tokens._
 // to merge this class into Tokens.Synthetic.
 private[meta] case class TransformedTokens(prototype: Tree) extends Tokens(Nil: _*) {
   override def input = this
-  override def dialect = scala.meta.dialects.Scala211
+  override def dialect = scala.meta.dialects.Dotty
   override def isAuthentic = false
   override def toString = s"Transformed($prototype)"
 }

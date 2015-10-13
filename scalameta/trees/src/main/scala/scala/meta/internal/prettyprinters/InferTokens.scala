@@ -14,7 +14,7 @@ import scala.meta.inputs._
 import scala.meta.tokens._
 import scala.meta.tokenquasiquotes._
 import scala.meta.prettyprinters._
-import scala.meta.dialects.Scala211
+import scala.meta.dialects.Dotty
 
 // TODO: this infers tokens for the Scala211 dialect due to token quasiquotes (the dialect needs to be explicitly imported). It should be changed in the future.
 // TODO: fix occasional incorrectness when semicolons are omitted
@@ -23,7 +23,7 @@ import scala.meta.dialects.Scala211
 // TODO: review https://github.com/scalameta/scalameta/pull/141 and apply fixes from there to here
 private[meta] object inferTokens {
   def apply(tree: Tree, proto: Option[Tree]): Tokens = {
-    infer(tree, proto)(scala.meta.dialects.Scala211) // as explained above, forcing dialect.
+    infer(tree, proto)(scala.meta.dialects.Dotty) // as explained above, forcing dialect.
   }
 
   /* Generate a single token for a literal */
