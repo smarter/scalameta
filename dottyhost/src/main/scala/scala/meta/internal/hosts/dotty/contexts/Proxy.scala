@@ -25,7 +25,7 @@ import scala.meta.internal.hosts.dotty.converters.{Api => ConverterApi}
 import scala.meta.internal.ast.mergeTrees
 import scala.tools.nsc.{Global => ScalaGlobal}
 import scala.tools.nsc.backend.JavaPlatform
-import scala.meta.dialects.Scala211
+import scala.meta.dialects.Dotty
 import scala.{meta => mapi}
 import scala.meta.internal.{ast => m}
 import scala.meta.internal.{semantic => s}
@@ -41,8 +41,8 @@ extends ConverterApi(global) with ContextApi with ProxyApi[G] {
 
   implicit lazy val c: ScalametaSemanticContext = this
 
-  def dialect: scala.meta.dialects.Scala211.type = {
-    scala.meta.dialects.Scala211
+  def dialect: scala.meta.dialects.Dotty.type = {
+    scala.meta.dialects.Dotty
   }
 
   def domain: mapi.Domain = {

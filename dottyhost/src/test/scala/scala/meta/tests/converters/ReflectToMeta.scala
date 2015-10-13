@@ -5,7 +5,7 @@ import org.scalatest._
 import java.io._
 import scala.compat.Platform.EOL
 import scala.{meta => m}
-import scala.meta.dialects.Scala211
+import scala.meta.dialects.Dotty
 import scala.meta.parsers._
 import scala.meta.prettyprinters._
 import scala.meta.internal.ast.mergeTrees

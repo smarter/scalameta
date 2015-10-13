@@ -18,7 +18,7 @@ class ReplSuite extends FunSuite {
   test("semantic APIs") {
     assert(repl("""
       |import scala.meta._
-      |import scala.meta.dialects.Scala211
+      |import scala.meta.dialects.Dotty
       |implicit val c = Context(Artifact(sys.props("sbt.paths.scalalibrary.classes")))
       |t"List[Int]" <:< t"List[Any]"
     """.stripMargin.trim)
@@ -27,11 +27,11 @@ class ReplSuite extends FunSuite {
       |scala> import scala.meta._
       |import scala.meta._
       |
-      |scala> import scala.meta.dialects.Scala211
-      |import scala.meta.dialects.Scala211
+      |scala> import scala.meta.dialects.Dotty
+      |import scala.meta.dialects.Dotty
       |
       |scala> implicit val c = Context(Artifact(sys.props("sbt.paths.scalalibrary.classes")))
-      |c: scala.meta.Context = Context(Artifact("<path/to/scala-library.jar>", "", Scala211))
+      |c: scala.meta.Context = Context(Artifact("<path/to/scala-library.jar>", "", Dotty))
       |
       |scala> t"List[Int]" <:< t"List[Any]"
       |res0: Boolean = true

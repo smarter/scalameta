@@ -5,7 +5,7 @@ import org.scalatest._
 import scala.compat.Platform.EOL
 import scala.meta._
 import scala.meta.internal.{ast => m}
-import scala.meta.dialects.Scala211
+import scala.meta.dialects.Dotty
 
 class SemanticSuite extends FunSuite {
   implicit val c = Context(Artifact(sys.props("sbt.paths.scalalibrary.classes")))

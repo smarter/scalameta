@@ -17,6 +17,6 @@ extends Exception(message, cause.orNull) with ScalahostException {
 
 @data class TypecheckException(tree: Tree, message: String)
 extends Exception(message) with ScalahostException {
-  import scala.meta.dialects.Scala211
+  import scala.meta.dialects.Dotty
   override def toString = s"$message$EOL${tree.show[Syntax]}"
 }

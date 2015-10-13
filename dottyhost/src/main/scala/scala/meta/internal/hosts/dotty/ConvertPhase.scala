@@ -3,7 +3,7 @@ package internal.hosts.dotty
 
 import scala.tools.nsc.{Global, Phase, SubComponent}
 import scala.tools.nsc.plugins.{Plugin => NscPlugin, PluginComponent => NscPluginComponent}
-import scala.meta.dialects.Scala211
+import scala.meta.dialects.Dotty
 import scala.meta.internal.hosts.dotty.{PluginBase => ScalahostPlugin}
 import scala.meta.internal.hosts.dotty.contexts.{Proxy => ProxyImpl}
 import scala.{meta => mapi}
